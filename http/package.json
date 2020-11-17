@@ -1,0 +1,9 @@
+{
+  "name": "http",
+  "version": "1.0.0",
+  "main": "server.js",
+  "start": "server.js",
+  "dependencies": {
+    
+  }
+}
