@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>products</title>
+</head>
+<body>
+<table id="countryList">
+    <thead>
+    <tr>
+        <th th:text="name"> name </th>
+        <th th:text="price"> price </th>
+        <th th:text="category"> Category </th>
+        <th th:text="buy"> buy </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.getGroupTbl().getCategory().getTitle()}"></td>
+        <td >
+            <form th:action="@{product/{id}(id = ${product.id})}" method="get" >
+                <input type="submit" value="buy">
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
